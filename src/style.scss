@@ -1,0 +1,123 @@
+@import "./variables.scss";
+.wp-block-boldblocks-icon-separator {
+  width: 100%;
+
+  &[style*="--bb--margin-top--sm"] {
+    margin-top: var(--bb--margin-top--sm) !important;
+  }
+  &[style*="--bb--margin-top--md"] {
+    @media (min-width: map-get($breakpoints, md )) {
+      margin-top: var(--bb--margin-top--md) !important;
+    }
+  }
+  &[style*="--bb--margin-top--lg"] {
+    @media (min-width: map-get($breakpoints, lg )) {
+      margin-top: var(--bb--margin-top--lg) !important;
+    }
+  }
+  &[style*="--bb--margin-bottom--sm"] {
+    margin-bottom: var(--bb--margin-bottom--sm) !important;
+  }
+  &[style*="--bb--margin-bottom--md"] {
+    @media (min-width: map-get($breakpoints, md )) {
+      margin-bottom: var(--bb--margin-bottom--md) !important;
+    }
+  }
+  &[style*="--bb--margin-bottom--lg"] {
+    @media (min-width: map-get($breakpoints, lg )) {
+      margin-bottom: var(--bb--margin-bottom--lg) !important;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+
+    &[style*="--bb--width--sm"] {
+      width: var(--bb--width--sm);
+    }
+    &[style*="--bb--width--md"] {
+      @media (min-width: map-get($breakpoints, md )) {
+        width: var(--bb--width--md);
+      }
+    }
+    &[style*="--bb--width--lg"] {
+      @media (min-width: map-get($breakpoints, lg )) {
+        width: var(--bb--width--lg);
+      }
+    }
+
+    &::before,
+    &::after {
+      flex: 1;
+      content: "";
+      border-top: var(--bb-border);
+    }
+
+    &[style*="solid"]{
+      &::before,
+      &::after {
+        border-radius: 10rem;
+      }
+    }
+
+    svg {
+      display: block;
+      width: var(--bb--icon-width, 1em);
+      height: auto;
+      margin: 0 var(--bb--icon-spacing, 1em);
+
+    }
+
+    &[style*="--bb--icon-fill-color"] {
+      svg {
+        &,
+        *{
+          fill: var(--bb--icon-fill-color) !important;
+        }
+      }
+    }
+
+    &[style*="--bb--icon-stroke-color"] {
+      svg {
+        &,
+        * {
+          stroke: var(--bb--icon-stroke-color, currentColor) !important;
+        }
+      }
+    }
+
+    &.icon-left {
+      &::before {
+        display: none;
+      }
+
+      svg {
+        margin-left: 0;
+      }
+    }
+
+    &.icon-right {
+      &::after {
+        display: none;
+      }
+
+      svg {
+        margin-right: 0;
+      }
+    }
+
+    &.is-align-center {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &.is-align-left {
+      margin-right: auto;
+    }
+
+    &.is-align-right {
+      margin-left: auto;
+    }
+  }
+}

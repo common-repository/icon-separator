@@ -1,0 +1,61 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "boldblocks/icon-separator",
+  "title": "Icon Separator",
+  "category": "design",
+  "description": "A simple horizontal separator with icon.",
+  "keywords": [
+    "separator",
+    "icon",
+    "divider",
+    "svg",
+    "image"
+  ],
+  "attributes": {
+    "icon": {
+      "type": "string"
+    },
+    "iconWidth": {
+      "type": "object"
+    },
+    "iconSpacing": {
+      "type": "object"
+    },
+    "iconPosition": {
+      "type": "string"
+    },
+    "iconFillColor": {
+      "type": "object"
+    },
+    "iconStrokeColor": {
+      "type": "object"
+    },
+    "width": {
+      "type": "object"
+    },
+    "margin": {
+      "type": "object"
+    },
+    "justifyAlignment": {
+      "type": "string"
+    },
+    "border": {
+      "type": "object",
+      "default": {
+        "width": "1px",
+        "style": "solid"
+      }
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": true,
+    "interactivity": {
+      "clientNavigation": true
+    }
+  },
+  "textdomain": "icon-separator",
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}
